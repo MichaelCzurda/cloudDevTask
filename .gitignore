@@ -1,2 +1,5 @@
-client/
-fastAPI/
+client/*
+fastAPI/*
+
+!client/.gitkeep
+!fastAPI/.gitkeep
