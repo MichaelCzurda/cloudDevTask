@@ -2,9 +2,9 @@
 
 ## Description
 
-This Repository is multi-container Docker applications managed by Docker Compose
+This Repository is a multi-container Docker application managed by Docker Compose.
 
-## Applications
+## Application
 
 ### Precondition
 - installed Docker
@@ -28,12 +28,13 @@ This Repository is multi-container Docker applications managed by Docker Compose
 ### FastAPI 
 Web Framework providing one endpoint for returning a list of integeres in descending order. <br/>
 Secret can be sent as API Key in the Header or Query Parameter. <br/>
+
 Secret Key: **"secret"** <br/>
 Secret Value: **"1234567890123456789012345678901234567890"**
 
 #### Source Code Web Framework
 For providing the Web Framework the official FastAPI Images are used.
-[Image](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker/blob/master/docker-images/python3.7.dockerfile) <br\>
+[Image](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker/blob/master/docker-images/python3.7.dockerfile)
 
 The source code for the endpoint is located here:
 ```
@@ -60,3 +61,17 @@ Python Client which calls the endpoint. The Client is an CLI Python Application 
 ```
     client/app/app.py
 ```
+
+#### Use Python client in standalone mode
+
+Just load the client:
+```
+    docker pull 108478/client
+```
+
+Run container and start a session:
+```
+    docker run -it --name test_client --rm 108478/client
+```
+
+After session is closed the container will be deleted (-rm Flag)
